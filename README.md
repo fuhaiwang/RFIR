@@ -32,27 +32,25 @@ pip install \
   tensorboard
 ```
 
-# Install torch_scatter
+## Install torch_scatter, Kornia & nvdiffrast
 ```bash
 pip install torch_scatter \
   --extra-index-url https://data.pyg.org/whl/torch-2.1.0+cu118/
 ```
-# Install Kornia & nvdiffrast
+
 ```bash
 pip install kornia
 
 git clone https://github.com/NVlabs/nvdiffrast
 pip install ./nvdiffrast
 ```
-# a modified gaussian splatting (+ depth, alpha rendering)
+## A modified gaussian splatting & simple-knn 
 ```bash
 pip install ./submodules/diff-gaussian-rasterization
-```
-# simple-knn
-```bash
+
 pip install ./submodules/simple-knn
 ```
-# Compile CUDA Extensions 
+## Compile CUDA Extensions 
 ```bash
 pip install ./submodules/simple-knn
 
@@ -63,7 +61,7 @@ pip install ./r3dg-rasterization
 pip install ./diff-gaussian-rasterization
 ```
 
-# Fix Common Runtime Error (Optional but Recommended)
+## Fix Common Runtime Error (Optional but Recommended)
 ImportError: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found
 
 ```bash
