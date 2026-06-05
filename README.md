@@ -92,10 +92,10 @@ CUDA_VISIBLE_DEVICES=0 python eval_nvs_RF_real.py --eval -m output/real_image/H_
 
 ## Wideband Mode
 ```bash
-CUDA_VISIBLE_DEVICES=7 python wideband_train.py --eval -m output/real_image/H_v2/render_RF_bb_v48 -s datasets/real_image/H_v2/H-RF-RCS --RF_iterations 5000 --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0 --opacity_lr 0.0 --scaling_lr 0 --rotation_lr 0 --power_scale 0.01
+CUDA_VISIBLE_DEVICES=0 python wideband_train.py --eval -m output/real_image/H_v2/render_RF_bb_v48 -s datasets/real_image/H_v2/H-RF-RCS --RF_iterations 5000 --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0 --opacity_lr 0.0 --scaling_lr 0 --rotation_lr 0 --power_scale 0.01
 ```
 ```bash
-CUDA_VISIBLE_DEVICES=6 python wideband_test.py --eval -m output/real_image/H_v2/render_RF_bb_v48 -c output/real_image/H_v2/render_RF_v7/chkpnt32000.pth -s datasets/real_image/H_v2/H-RF-RCS -t1 render_RF -t2 render_RF_bb --power_scale 0.01 
+CUDA_VISIBLE_DEVICES=0 python wideband_test.py --eval -m output/real_image/H_v2/render_RF_bb_v48 -c output/real_image/H_v2/render_RF_v7/chkpnt32000.pth -s datasets/real_image/H_v2/H-RF-RCS -t1 render_RF -t2 render_RF_bb --power_scale 0.01 
 ```
 
 
