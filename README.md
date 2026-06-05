@@ -69,8 +69,12 @@ export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 ```
 
 ## Verify Installation
-
-Torch: 2.1.2+cu118
+```bash
+import torch
+print("Torch:", torch.__version__)
+print("CUDA available:", torch.cuda.is_available())
+```
+Torch: 2.1.2+cu118 \
 CUDA available: True
 
 ## Run
