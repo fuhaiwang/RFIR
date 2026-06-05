@@ -77,7 +77,7 @@ print("CUDA available:", torch.cuda.is_available())
 Torch: 2.1.2+cu118 \
 CUDA available: True
 
-## Run Narrow-Mode
+## Run in Narrow-Mode
 ### Train with terminal
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train.py --eval -s "datasets/real_image/H_v2/H-RF-RCS" -m output/real_image/H_v2/render_RF -c output/real_image/H_v2/3dgs/chkpnt30000.pth --save_training_vis --freq wideband --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0025 --opacity_lr 0.005 --scaling_lr 0 --rotation_lr 0 --iterations 40000 -t render_RF --save_training_vis_iteration 400 --lambda_env_smooth 0.01 
@@ -90,7 +90,7 @@ CUDA_VISIBLE_DEVICES=0 python eval_nvs_RF_real.py --eval -m output/real_image/H_
 ```
 
 
-## Wideband Mode
+## Run in Wideband Mode
 ```bash
 CUDA_VISIBLE_DEVICES=0 python wideband_train.py --eval -m output/real_image/H_v2/render_RF_bb_v48 -s datasets/real_image/H_v2/H-RF-RCS --RF_iterations 5000 --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0 --opacity_lr 0.0 --scaling_lr 0 --rotation_lr 0 --power_scale 0.01
 ```
