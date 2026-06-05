@@ -79,7 +79,7 @@ CUDA available: True
 
 ## Train base geometry with 3DGS
 ```bash
-CUDA_VISIBLE_DEVICES=0 python train.py --eval -s "datasets/real_image/H_v2/Colmap" -m output/real_image/H_v2/3dgs --lambda_normal_render_depth 0.01 --lambda_normal_smooth 0.01 --lambda_mask_entropy 0.1 --save_training_vis --lambda_depth_var 1e-2
+CUDA_VISIBLE_DEVICES=0 python train.py --eval -s "datasets/real_image/H/Colmap" -m output/real_image/H/3dgs --lambda_normal_render_depth 0.01 --lambda_normal_smooth 0.01 --lambda_mask_entropy 0.1 --save_training_vis --lambda_depth_var 1e-2
 ```
 ## Run in Narrow-Mode 
 ### Train with terminal
@@ -94,10 +94,10 @@ CUDA_VISIBLE_DEVICES=0 python eval_nvs_RF_real.py --eval -m output/real_image/H/
 
 ## Run in Wideband Mode
 ```bash
-CUDA_VISIBLE_DEVICES=0 python wideband_train.py --eval -m output/real_image/H/render_RF_bb_v48 -s datasets/real_image/H/H-RF-RCS --RF_iterations 5000 --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0 --opacity_lr 0.0 --scaling_lr 0 --rotation_lr 0 --power_scale 0.01
+CUDA_VISIBLE_DEVICES=0 python wideband_train.py --eval -m output/real_image/H/render_RF_bb -s datasets/real_image/H/H-RF-RCS --RF_iterations 5000 --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0 --opacity_lr 0.0 --scaling_lr 0 --rotation_lr 0 --power_scale 0.01
 ```
 ```bash
-CUDA_VISIBLE_DEVICES=0 python wideband_test.py --eval -m output/real_image/H/render_RF_bb_v48 -c output/real_image/H/render_RF_v7/chkpnt32000.pth -s datasets/real_image/H/H-RF-RCS -t1 render_RF -t2 render_RF_bb --power_scale 0.01 
+CUDA_VISIBLE_DEVICES=0 python wideband_test.py --eval -m output/real_image/H/render_RF_bb -c output/real_image/H/render_RF_v7/chkpnt32000.pth -s datasets/real_image/H/H-RF-RCS -t1 render_RF -t2 render_RF_bb --power_scale 0.01 
 ```
 
 
