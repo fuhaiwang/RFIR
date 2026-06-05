@@ -84,12 +84,13 @@ CUDA_VISIBLE_DEVICES=0 python train.py --eval -s "datasets/real_image/H/Colmap" 
 ## Run in Narrow-Mode 
 ### Train with terminal
 ```bash
-CUDA_VISIBLE_DEVICES=0 python train.py --eval -s "datasets/real_image/H/H-RF-RCS" -m output/real_image/H/render_RF -c output/real_image/H/3dgs/chkpnt30000.pth --save_training_vis --freq wideband --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0025 --opacity_lr 0.005 --scaling_lr 0 --rotation_lr 0 --iterations 40000 -t render_RF --save_training_vis_iteration 400 --lambda_env_smooth 0.01 
+CUDA_VISIBLE_DEVICES=0 python train.py --eval -s "datasets/real_image/H/H-RF-RCS" -m output/real_image/H/render_RF -c output/real_image/H/3dgs/chkpnt30000.pth --save_training_vis --freq wideband --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.01 --opacity_lr 0.01 --scaling_lr 0 --rotation_lr 0 --iterations 32000 -t render_RF --save_training_vis_iteration 400 --lambda_env_smooth 0.01 --power_scale 0.01 
+
 ```
 
 ### Evalualuate
 ```bash
-CUDA_VISIBLE_DEVICES=0 python eval_nvs_RF_real.py --eval -m output/real_image/H/render_RF -c output/real_image/H/render_RF/chkpnt40000.pth -t render_RF  
+CUDA_VISIBLE_DEVICES=0 python eval_nvs_RF_real.py --eval -m output/real_image/H/render_RF -c output/real_image/H/render_RF/chkpnt32000.pth -t render_RF --power_scale 0.01
 ```
 
 ## Run in Wideband Mode
@@ -97,7 +98,7 @@ CUDA_VISIBLE_DEVICES=0 python eval_nvs_RF_real.py --eval -m output/real_image/H/
 CUDA_VISIBLE_DEVICES=0 python wideband_train.py --eval -m output/real_image/H/render_RF_bb -s datasets/real_image/H/H-RF-RCS --RF_iterations 5000 --position_lr_init 0 --position_lr_final 0 --normal_lr 0 --sh_lr 0.0 --opacity_lr 0.0 --scaling_lr 0 --rotation_lr 0 --power_scale 0.01
 ```
 ```bash
-CUDA_VISIBLE_DEVICES=0 python wideband_test.py --eval -m output/real_image/H/render_RF_bb -c output/real_image/H/render_RF_v7/chkpnt32000.pth -s datasets/real_image/H/H-RF-RCS -t1 render_RF -t2 render_RF_bb --power_scale 0.01 
+CUDA_VISIBLE_DEVICES=0 python wideband_test.py --eval -m output/real_image/H/render_RF_bb -c output/real_image/H/render_RF/chkpnt32000.pth -s datasets/real_image/H/H-RF-RCS -t1 render_RF -t2 render_RF_bb --power_scale 0.01 
 ```
 
 
