@@ -108,6 +108,15 @@ CUDA_VISIBLE_DEVICES=0 python wideband_test.py --eval -m output/real_image/H/ren
 * [Wideband Siganl on Real Data]: Wideband Siganl results of the **H** letter ([download](https://drive.google.com/file/d/1YaKnsI5XuLAFw6Zv0VXUjyhLgsEf9Nf2/view?usp=drive_link))
 
 
+# Pretrained Models
+
+| Model | Description | Download |
+|------|-------------|----------|
+| Base Geometry (3DGS) | Geometry reconstructed from multi-view images | [Download](https://drive.google.com/file/d/1ADdAi36ipD_QT4ubVByFN_VABLYkGMXe/view?usp=drive_link) |
+| RFIR (Narrowband) | Trained narrowband RF model | [Download](https://drive.google.com/file/d/1ADdAi36ipD_QT4ubVByFN_VABLYkGMXe/view?usp=drive_link) |
+| RFIR (Wideband) | Trained wideband RF model | [Download](https://drive.google.com/file/d/1J3_SW6d4YG9ruDf7qpPbHP9aP03A-hcU/view?usp=drive_link) |
+
+
 <p align="center">
 <img src=".\figures\overview.png" width="900" height="" alt="" align=center />
 </p>
